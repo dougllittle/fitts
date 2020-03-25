@@ -1,0 +1,511 @@
+/*
+Theme Name: Fitts
+Author: Doug Little
+Description: Now You Get to Raise Yourself Blog
+Version: 0.0.1
+Tags: bootstrap
+*/
+
+/* Biggens */
+
+*{
+	margin:0;
+	padding:0;
+}
+
+html, section, main, footer, header{
+	display:block;
+}
+
+.fitts-block-link{
+	display:block;
+}
+
+p, li, a:not(#fitts-logo-link), input, label{
+	font-family:"Roboto", "Arial", sans-serif;
+}
+
+.fitts-btn{
+	padding:5px;
+}
+
+.hidden-visually{
+	height:0;
+	font-size:0;
+	opacity:0;
+	margin:0;
+	padding:0;
+	line-height:0;
+}
+
+/* Header */
+
+#fitts-header{
+	min-height: 125px;
+	padding:0 15px;
+	position:sticky;
+	top:0;
+	z-index:2;
+}
+
+#fitts-header #fitts-header-bg, #fitts-header #fitts-header-wrap{
+    position:absolute;
+    top:0px;
+    right:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+#fitts-header #fitts-header-wrap{
+    background-color:transparent;
+}
+
+#fitts-header #fitts-header-bg{
+    background-color:white;
+    /*box-shadow: 0px 2px 2px -2px gray;*/
+    display:none;
+}
+
+body.logged-in #fitts-header {
+  top: 46px;
+}
+@media screen and (min-width: 783px) {
+  body.logged-in #fitts-header {
+    top: 32px;
+  }
+}
+
+.fitts-nav .fitts-nav-list {
+	list-style: none;
+	margin:0;
+	display:flex;
+	flex-flow:column;
+	justify-content:center;
+	align-items:flex-start;
+}
+
+#fitts-logo, h1, h2, h3{
+	font-family: "Gelasio", Serif;
+}
+
+#fitts-logo{
+	font-size:30px;
+	padding:0 15px;
+}
+
+#fitts-logo-link, #fitts-logo-link:hover{
+	color:inherit;
+	text-decoration:none;
+}
+
+#fitts-header-wrap{
+	padding:1rem 0;
+	min-height:125px;
+	display:flex;
+	flex-flow:column nowrap;
+	align-items:center;
+	justify-content: space-evenly;
+}
+
+.fitts-header-wrap-item{
+	margin:10px 0;
+}
+
+.fitts-nav{
+	width:100%;
+}
+
+.fitts-nav-list .menu-item{
+	margin:0;
+}
+
+.fitts-nav{
+	display:flex;
+	flex-flow:row wrap;
+	justify-content: space-between;
+	align-items: center;
+	max-width:fit-content;
+	align-self:flex-start;
+	font-size: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding:0 15px;
+}
+
+.fitts-nav-wrap{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+@media screen and (min-width:768px){
+	.fitts-nav{
+		padding:0;
+	}
+
+	#fitts-logo{
+		text-align:center;
+	}
+	.fitts-nav .fitts-nav-list{
+		display:flex;
+		flex-flow:row nowrap;
+		justify-content: flex-start;
+		align-items:center;
+	    height: 100%;
+	}
+
+	.fitts-nav-list .menu-item{
+		margin:0 1rem;
+	}
+}
+
+/* 
+ * Fitts Main
+ */
+
+#fitts-main{
+	margin:2rem 0 0;
+	display:flex;
+	flex-flow:row wrap;
+	justify-content: space-between;
+	align-items:flex-start;
+}
+
+#fitts-main .post{
+	position: relative;
+	overflow:hidden;
+	background-size:cover;
+}
+
+#fitts-main .post:first-of-type{
+	width:100%;
+	height:500px;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+}
+
+#fitts-main .post:first-of-type .fitts-article-wrap{
+    width: 50%;
+    padding: 1rem;
+    background:rgba(255,255,255,.75);
+    z-index:1;
+    display:flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items:flex-start;
+    min-height:187px;
+}
+
+@media screen and (max-width:992px){
+	#fitts-main .post:first-of-type .fitts-article-wrap{
+		width: calc(100% - 50px);
+	}
+}
+
+#fitts-main .post:first-of-type .article-title{
+	font-size:26px;
+	margin-bottom:0;
+}
+
+#fitts-main .post:first-of-type .article-content *{
+	margin-bottom:0;
+}
+
+#fitts-main .post:not(:first-of-type){
+	margin-top:2rem;
+	flex:1;
+	height:250px;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	min-width: 200.2px;
+}
+
+#fitts-main .post:not(:first-of-type) .fitts-article-wrap{
+	width: 70%;
+    padding: 1rem;
+    background: rgba(255,255,255,.75);
+    min-height:120px;
+    z-index:1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+#fitts-main .post:not(:first-of-type) .fitts-article-wrap .article-content{
+	display:none;
+}
+
+#fitts-main .post:not(:first-of-type) .article-header{
+	margin-bottom: auto;
+}
+
+#fitts-main .post:not(:first-of-type) .article-title{
+	font-size:22px;
+	margin-bottom: 0;
+}
+
+#fitts-main .post .wp-post-image{
+	max-width:100%;
+	object-fit:cover;
+	height:225px;
+}
+
+.article-categories{
+    font-size: 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#fitts-main .post:not(:first-of-type) .article-categories{
+	margin-bottom: auto;
+}
+
+#fitts-main .post:not(:first-of-type) .article-box{
+	display:none;
+}
+
+#fitts-main .post:first-of-type .article-box{
+	width: calc(100% - 50px);
+    height: 450px;
+    position: absolute;
+    border: 2px solid rgba(255,255,255,.5);
+}
+
+#fitts-main .post .fitts-article-wrap::after{
+	content:"";
+	opacity:0;
+	box-shadow:-2px -2px 22px rgba(0,0,0,.5);
+	transition: opacity 0.3s ease-in-out;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index:-1;
+}
+
+#fitts-main .post:hover .fitts-article-wrap::after, #fitts-main .post:focus-within .fitts-article-wrap::after{
+	opacity:1;
+}
+
+.fitts-article-wrap{
+    position: relative;
+}
+
+/* 
+ * Fitts Sidebar
+ */
+
+ #fitts-sidebar{
+	margin:2rem 0 0;
+	display:flex;
+	flex-flow:column nowrap;
+	justify-content: flex-start;
+	align-items:flex-start;
+	font-family:"";
+}
+
+.sidebar-card{
+	margin-bottom:2rem;
+}
+
+#fitts-sidebar-intro{
+	position:relative;
+	height: 200px;
+	overflow:hidden;
+}
+
+#sidebar-intro-headshot{
+	max-width:100%;
+	width: 100%;
+	height: 100%;
+	object-fit:cover;
+}
+
+#sidebar-intro-card{
+	position:absolute;
+	width:100%;
+	height:100%;
+	z-index:1;
+	background:transparent;
+	left:0;
+	bottom:0;
+	display:flex;
+	flex-flow:column nowrap;
+	justify-content: flex-end;
+    align-items: flex-start;
+	color:white;
+	background:rgba(0,0,0,.2);
+	padding:10px;
+	transition: background .3s ease-in-out;
+}
+
+#fitts-main .post:not(:first-of-type):nth-child(3){
+	margin-left:0rem;
+}
+
+@media screen and (min-width: 430px){
+	#fitts-main .post:not(:first-of-type){
+		min-width:100%;
+	}
+}
+
+@media screen and (min-width:463px){
+	#fitts-main .post:not(:first-of-type){
+		min-width: 200.2px;
+	}
+		#fitts-main .post:not(:first-of-type):nth-child(3){
+		margin-left:2rem;
+	}
+}
+
+@media screen and (min-width:576px){
+	#sidebar-intro-headshot{
+		transform: scaleX(-1) scale(2);
+    	object-position: 0px 48px;
+	}
+	#sidebar-intro-card{
+		align-items:center;
+	}
+	#fitts-main .post:not(:first-of-type){
+		max-width:330px;
+	}
+	#fitts-main .post:not(:first-of-type):nth-child(3){
+		margin-left:0;
+	}
+}
+
+@media screen and (min-width:768px){
+	#sidebar-intro-headshot{
+		transform: scaleX(-1) scale(1.7);
+		object-position: 0;
+	}
+	#sidebar-intro-card{
+		align-items:flex-end;
+	}
+	#fitts-main .post:not(:first-of-type){
+		max-width:209px;
+	}
+	#fitts-main .post:not(:first-of-type):nth-child(3){
+		margin-left:0;
+	}
+}
+
+@media screen and (min-width:992px){
+	#sidebar-intro-headshot{
+		object-position: 0 -40px;
+		transform:scaleX(-1);
+	}
+	#fitts-main .post:not(:first-of-type){
+		max-width:289px;
+	}
+	#fitts-main .post:not(:first-of-type):nth-child(3){
+		margin-left:0;
+	}
+}
+
+@media screen and (min-width:1200px){
+	#sidebar-intro-headshot{
+		object-position: 0 -90px;
+		transform:scaleX(-1);
+	}
+	#fitts-main .post:not(:first-of-type){
+		max-width:350px;
+	}
+	#fitts-main .post:not(:first-of-type):nth-child(3){
+		margin-left:0;
+	}
+}
+
+
+#sidebar-intro-card:hover, #sidebar-intro-card:focus{
+	background:rgba(0, 0, 0, .3);
+}
+
+.fitts-first-cap{
+	font-family:"Roboto", "Arial", sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size:16px;
+	font-weight:bold;
+	margin-bottom:0;
+}
+
+.fitts-first-cap-l{
+	font-size:20px;
+}
+
+#intro-card-social{
+	display:flex;
+	flex-flow:row nowrap;
+	justify-content: space-around;
+	align-items: center;
+	width: 100px;
+	font-size:20px;
+}
+
+.card-social-link{
+	color:white;
+}
+
+.card-social-link:hover, .card-social-link:focus{
+	color:#0056b3;
+}
+
+#fitts-sidebar .fitts-form-group{
+	position: relative;
+}
+
+#fitts-sidebar .fitts-form-group:not(.fitts-form-group-checkbox){
+	display:inline-block;
+}
+
+#fitts-sidebar .fitts-subscribe-label[for="Email"]{
+	font-size:0px;
+	opacity:0;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding-left: 5px;
+    transition:all .2s ease-in-out;
+    z-index:-1;
+}
+
+#fitts-sidebar input[id="Email"]:focus + label, #fitts-sidebar input[id="Email"]:not(:placeholder-shown) + label{
+	opacity:.5;
+	font-size:10px;
+}
+
+#fitts-sidebar input[id="Email"]:focus::placeholder{
+	font-size:0px;
+	opacity:0;
+	transition:all .2s ease-in-out;
+}
+
+#fitts-sidebar input[id="Email"]{
+	background:transparent;
+	border:0;
+}
+
+/* Fitts Footer */
+
+#fitts-footer{
+	margin-top:2rem;
+	background-color:#212529;
+	color:#fff;
+	padding:15px;
+}
